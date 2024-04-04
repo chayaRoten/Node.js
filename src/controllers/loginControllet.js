@@ -1,4 +1,4 @@
-const usersService = require('../services/users.service')
+const usersService = require('../services/login.service')
 require('dotenv').config()
 
 const login = async (req, res) => {

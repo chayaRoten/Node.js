@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const mongoDB = 'mongodb://localhost:27017/yad2'
+const mongoDB = process.env.DATABASE_URL
 mongoose.set('strictQuery', false)
 main().catch((err) => console.log(err))
 async function main () {

@@ -9,6 +9,7 @@ const auth = require('./src/middleware/auth')
 const logger = require('./src/middleware/logger')
 const checkMethod = require('./src/middleware/checkMethod')
 const error = require('./src/routes/error_routes')
+const port = process.env.PORT
 require('./src/services/db.service')
 
 app.use(bodyParser.json())
@@ -22,8 +23,8 @@ app.use(categoty)
 app.use(product)
 app.use(error)
 
-app.listen(3000, () => {
-  console.log('listening on http://localhost:3000')
+app.listen(port, () => {
+  console.log(`listening on http://localhost:${port}`)
 })
 
 function errorHandler (err, req, res, next) {
